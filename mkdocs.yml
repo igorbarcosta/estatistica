@@ -1,0 +1,35 @@
+site_name: Estatística Aplicada
+site_url: https://igorbarcosta.github.io/estatistica/
+theme:
+  name: material
+  language: pt-BR
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - toc.integrate
+    - search.highlight
+    - search.share
+    - content.code.annotate
+    - content.code.copy
+  palette:
+    scheme: default
+    primary: blue
+    accent: light blue
+  font:
+    text: Roboto
+    code: Roboto Mono
+  icon:
+    logo: material/library
+    repo: fontawesome/brands/github
+repo_url: https://github.com/igorbarcosta/estatistica
+repo_name: igorbarcosta/estatistica
+nav:
+  - Início: index.md
+  - Roteiros de Aula:
+      - Aula 1: roteiros/aula1.md
+      - Aula 2: roteiros/aula2.md
+  - Conteúdos Estatísticos:
+      - Estatística Descritiva: conteudos/descritiva.md
+      - Probabilidade: conteudos/probabilidade.md
