@@ -13,16 +13,23 @@ theme:
     - search.share
     - content.code.annotate
     - content.code.copy
+    -
   palette:
     scheme: default
-    primary: blue
-    accent: light blue
+    primary: green
+    accent: red
   font:
     text: Roboto
     code: Roboto Mono
-  icon:
-    logo: material/library
-    repo: fontawesome/brands/github
+  favicon: images/favicon.ico
+  logo: images/logo_ifpb.png
+  colors:
+markdown_extensions:
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
 repo_url: https://github.com/igorbarcosta/estatistica
 repo_name: igorbarcosta/estatistica
 nav:
@@ -32,4 +39,12 @@ nav:
       - Aula 2: roteiros/aula2.md
   - Conteúdos Estatísticos:
       - Estatística Descritiva: conteudos/descritiva.md
-      - Probabilidade: conteudos/probabilidade.md
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/igorbarcosta
+    - icon: fontawesome/solid/envelope
+      link: mailto:igor.costa@ifpb.edu.br
+  generator: false
+copyright: "© 2025 Igor Barbosa da Costa. Todos os direitos reservados."
+
