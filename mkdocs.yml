@@ -8,12 +8,12 @@ theme:
     - navigation.tracking
     - navigation.sections
     - navigation.expand
-    - toc.integrate
+    - toc.follow
     - search.highlight
     - search.share
     - content.code.annotate
     - content.code.copy
-    -
+    - content.code.select
   palette:
     scheme: default
     primary: green
@@ -23,22 +23,39 @@ theme:
     code: Roboto Mono
   favicon: images/favicon.ico
   logo: images/logo_ifpb.png
-  colors:
+
 markdown_extensions:
+  - admonition
   - attr_list
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
 
 repo_url: https://github.com/igorbarcosta/estatistica
 repo_name: igorbarcosta/estatistica
 nav:
   - Início: index.md
   - Roteiros de Aula:
-      - Aula 1: roteiros/aula1.md
-      - Aula 2: roteiros/aula2.md
-  - Conteúdos Estatísticos:
-      - Estatística Descritiva: conteudos/descritiva.md
+      - Aula 1: roteiros/aula_01.md
+  - Fundamentação Teórica:
+    - Estatística Descritiva:
+      - Introdução: material/estatistica_descritiva/01_introducao.md
+      - Tipos de Dados: material/estatistica_descritiva/02_tipos_de_dados.md
+      - Coleta e Organização de Dados: material/estatistica_descritiva/03_coleta_e_organizacao_de_dados.md
+      - Visualização de Dados: material/estatistica_descritiva/04_visualizacao_de_dados.md
+      - Medidas de Tendência Central: material/estatistica_descritiva/05_medidas_de_tendencia_central.md
+      - Medidas de Dispersão: material/estatistica_descritiva/06_medidas_de_dispersao.md
+      - Formas de Distribuição: material/estatistica_descritiva/07_formas_de_distribuicao.md
+      - Associação entre Variáveis: material/estatistica_descritiva/08_associacao_entre_variaveis.md
+      - Estudos de Caso: material/estatistica_descritiva/09_estudos_de_caso.md
+      - Fechamento: material/estatistica_descritiva/10_fechamento.md
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -48,3 +65,7 @@ extra:
   generator: false
 copyright: "© 2025 Igor Barbosa da Costa. Todos os direitos reservados."
 
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/chart.js  # Chart.js da CDN
+  - https://cdn.jsdelivr.net/npm/chartjs-chart-box-and-violin-plot/build/Chart.BoxPlot.min.js
+  - js/visualizacao_de_dados.js
