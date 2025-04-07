@@ -4,10 +4,12 @@ theme:
   name: material
   language: pt-BR
   features:
+    - navigation.path
     - navigation.instant
     - navigation.tracking
     - navigation.sections
-    - navigation.expand
+    - navigation.tabs
+    - navigation.tabs.sticky
     - toc.follow
     - search.highlight
     - search.share
@@ -15,14 +17,27 @@ theme:
     - content.code.copy
     - content.code.select
   palette:
-    scheme: default
-    primary: green
-    accent: red
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
   font:
-    text: Roboto
-    code: Roboto Mono
-  favicon: images/favicon.ico
-  logo: images/logo_ifpb.png
+    text: Inter
+    code: JetBrains Mono
+  icon:
+    logo: material/chart-box-outline
+
 
 markdown_extensions:
   - admonition
@@ -36,26 +51,61 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed  
+  - toc:
+      permalink: true
 
 repo_url: https://github.com/igorbarcosta/estatistica
 repo_name: igorbarcosta/estatistica
 nav:
   - Início: index.md
-  - Roteiros de Aula:
-      - Aula 1: roteiros/aula_01.md
-  - Fundamentação Teórica:
+  - Roteiros de Aula: 
+      - roteiros/index.md
+      - Aula 01: roteiros/aula_01.md
+      - Aula 02: roteiros/aula_02.md
+  - Fundamentação Teórica: 
+    - material/index.md
+    - Fundamentos:
+      - Visão Geral: 
+        - Definição de Estatística: material/fundamentos/visao_geral/definicao_de_estatistica.md
+        - Conjunto de Dados: material/fundamentos/visao_geral/conjunto_de_dados.md
+        - Ramos da Estatística: material/fundamentos/visao_geral/ramos_da_estatistica.md
+      - Classificação dos Dados:
+        - Tipos de Dados: material/fundamentos/classificacao_dos_dados/tipos_de_dados.md
+        - Níves de Mensuração: material/fundamentos/classificacao_dos_dados/niveis_de_mensuracao.md
+      - Investigação Estatística: 
+        - O Ciclo PPDAC: material/fundamentos/investigacao_estatistica/o_ciclo_ppdac.md
+        - Técnicas de Amostragem: material/fundamentos/investigacao_estatistica/tecnicas_de_amostragem.md
+        - Vieses de Amostragem: material/fundamentos/investigacao_estatistica/vieses_de_amostragem.md
     - Estatística Descritiva:
-      - Introdução: material/estatistica_descritiva/01_introducao.md
-      - Tipos de Dados: material/estatistica_descritiva/02_tipos_de_dados.md
-      - Coleta e Organização de Dados: material/estatistica_descritiva/03_coleta_e_organizacao_de_dados.md
-      - Visualização de Dados: material/estatistica_descritiva/04_visualizacao_de_dados.md
-      - Medidas de Tendência Central: material/estatistica_descritiva/05_medidas_de_tendencia_central.md
-      - Medidas de Dispersão: material/estatistica_descritiva/06_medidas_de_dispersao.md
-      - Formas de Distribuição: material/estatistica_descritiva/07_formas_de_distribuicao.md
-      - Associação entre Variáveis: material/estatistica_descritiva/08_associacao_entre_variaveis.md
-      - Estudos de Caso: material/estatistica_descritiva/09_estudos_de_caso.md
-      - Fechamento: material/estatistica_descritiva/10_fechamento.md
+      - Distribuições de Frequência:
+        - Tabelas de Frequência: material/estatistica_descritiva/distribuicoes_de_frequencia/tabelas_de_frequencia.md
+        - Representações Gráficas: material/estatistica_descritiva/distribuicoes_de_frequencia/representacoes_graficas.md
+        - Erros comuns e Armadilhas: material/estatistica_descritiva/distribuicoes_de_frequencia/erros_comuns_e_armadilhas.md
+      - Medidas de Tendência Central:
+        - Média, Mediana e Moda: material/estatistica_descritiva/medidas_de_tendencia_central/media_mediana_e_moda.md
+        - Média Ponderada e Média de Dados Agrupados: material/estatistica_descritiva/medidas_de_tendencia_central/media_ponderada.md
+        - As Formas das Distribuições: material/estatistica_descritiva/medidas_de_tendencia_central/as_formas_das_distribuicao.md
+      - Medidas de Variação:
+        - Amplitude: material/estatistica_descritiva/medidas_de_variacao/amplitude.md
+        - Variância e Desvio Padrão: material/estatistica_descritiva/medidas_de_variacao/variancia_e_desvio_padrao.md
+        - Interpretando o Desvio Padrão: material/estatistica_descritiva/medidas_de_variacao/interpretando_o_desvio_padrao.md
+        - Devio Padrão dos Dados Agrupados: material/estatistica_descritiva/medidas_de_variacao/desvio_padrao_dos_dados_agrupados.md
+        - Coeficiente de Variação: material/estatistica_descritiva/medidas_de_variacao/coeficiente_de_variacao.md
+      - Medidas de Posição: 
+        - Quartis: material/estatistica_descritiva/medidas_de_posicao/quartis.md
+        - Percentis e Outras Separatrizes: material/estatistica_descritiva/medidas_de_posicao/percentis_e_outras_separatrizes.md
+        - O Escore Padrão:  material/estatistica_descritiva/medidas_de_posicao/o_escore_padrao.md
+    - Probabilidade:
+      - material/probabilidade/index.md
+    - Estatística Inferencial:
+      - material/estatistica_inferencial/index.md
+
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -66,6 +116,8 @@ extra:
 copyright: "© 2025 Igor Barbosa da Costa. Todos os direitos reservados."
 
 extra_javascript:
-  - https://cdn.jsdelivr.net/npm/chart.js  # Chart.js da CDN
-  - https://cdn.jsdelivr.net/npm/chartjs-chart-box-and-violin-plot/build/Chart.BoxPlot.min.js
-  - js/visualizacao_de_dados.js
+  #Apesar de colocar aqui, o arquivo precisa ser colocado no final de cada .md que fizer uso
+  - https://cdn.jsdelivr.net/npm/chart.js
+
+extra_css:
+  - assets/stylesheets/extra.css

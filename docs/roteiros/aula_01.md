@@ -1,4 +1,9 @@
-# Roteiro de Aulas
+# Semana 01
 
-- 27/03/2025 - Ambientação
-- 04/04/2025 - Estatística Descritiva
+## Ambientação
+- Apresentação do professor e da disciplina
+
+## Apresentação
+- Fundamentos da Estatística
+
+
