@@ -50,6 +50,9 @@ if (pizzaCanvas && !pizzaCanvas.dataset.rendered) {
         title: {
           display: true,
           text: 'Composição por Gênero de Conteúdo'
+        },
+        legend: {
+          position: "right"
         }
       }
     }

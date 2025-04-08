@@ -1,7 +1,14 @@
 site_name: Estatística Aplicada
 site_url: https://igorbarcosta.github.io/estatistica/
+site_author: Ígor Barbosa da Costa
+site_description: Estatística Aplicada - IFPB - Campina Grande
+
+repo_name: igorbarcosta/estatistica
+repo_url: https://github.com/igorbarcosta/estatistica
+
 theme:
   name: material
+  custom_dir: overrides
   language: pt-BR
   features:
     - navigation.path
@@ -17,23 +24,13 @@ theme:
     - content.code.copy
     - content.code.select
   palette:
-
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default 
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
 
-    # Palette toggle for dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: black
-      toggle:
-        icon: material/brightness-4
-        name: Switch to system preference
+
   font:
-    text: Inter
+    text: Roboto
     code: JetBrains Mono
   icon:
     logo: material/chart-box-outline
@@ -60,8 +57,7 @@ markdown_extensions:
   - toc:
       permalink: true
 
-repo_url: https://github.com/igorbarcosta/estatistica
-repo_name: igorbarcosta/estatistica
+
 nav:
   - Início: index.md
   - Roteiros de Aula: 
@@ -69,7 +65,6 @@ nav:
       - Aula 01: roteiros/aula_01.md
       - Aula 02: roteiros/aula_02.md
   - Fundamentação Teórica: 
-    - material/index.md
     - Fundamentos:
       - Visão Geral: 
         - Definição de Estatística: material/fundamentos/visao_geral/definicao_de_estatistica.md
@@ -90,7 +85,7 @@ nav:
       - Medidas de Tendência Central:
         - Média, Mediana e Moda: material/estatistica_descritiva/medidas_de_tendencia_central/media_mediana_e_moda.md
         - Média Ponderada e Média de Dados Agrupados: material/estatistica_descritiva/medidas_de_tendencia_central/media_ponderada.md
-        - As Formas das Distribuições: material/estatistica_descritiva/medidas_de_tendencia_central/as_formas_das_distribuicao.md
+        - As Formas das Distribuições: material/estatistica_descritiva/medidas_de_tendencia_central/as_formas_das_distribuicoes.md
       - Medidas de Variação:
         - Amplitude: material/estatistica_descritiva/medidas_de_variacao/amplitude.md
         - Variância e Desvio Padrão: material/estatistica_descritiva/medidas_de_variacao/variancia_e_desvio_padrao.md
@@ -108,11 +103,14 @@ nav:
 
 extra:
   social:
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/igorbarcosta
     - icon: fontawesome/brands/github
       link: https://github.com/igorbarcosta
     - icon: fontawesome/solid/envelope
       link: mailto:igor.costa@ifpb.edu.br
   generator: false
+
 copyright: "© 2025 Igor Barbosa da Costa. Todos os direitos reservados."
 
 extra_javascript:
