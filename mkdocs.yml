@@ -12,7 +12,7 @@ theme:
   language: pt-BR
   features:
     - navigation.path
-    - navigation.instant
+    ##- navigation.instant
     - navigation.tracking
     - navigation.sections
     - navigation.tabs
@@ -30,7 +30,7 @@ theme:
 
 
   font:
-    text: Roboto
+    text: Inter
     code: JetBrains Mono
   icon:
     logo: material/chart-box-outline
@@ -56,6 +56,10 @@ markdown_extensions:
   - pymdownx.tabbed  
   - toc:
       permalink: true
+  - pymdownx.details
+  - pymdownx.arithmatex:
+      generic: true
+
 
 
 nav:
@@ -83,19 +87,24 @@ nav:
         - Representações Gráficas: material/estatistica_descritiva/distribuicoes_de_frequencia/representacoes_graficas.md
         - Erros comuns e Armadilhas: material/estatistica_descritiva/distribuicoes_de_frequencia/erros_comuns_e_armadilhas.md
       - Medidas de Tendência Central:
-        - Média, Mediana e Moda: material/estatistica_descritiva/medidas_de_tendencia_central/media_mediana_e_moda.md
-        - Média Ponderada e Média de Dados Agrupados: material/estatistica_descritiva/medidas_de_tendencia_central/media_ponderada.md
-        - As Formas das Distribuições: material/estatistica_descritiva/medidas_de_tendencia_central/as_formas_das_distribuicoes.md
+        - Por quê?: material/estatistica_descritiva/medidas_de_tendencia_central/por_que_precisamos_de_uma_medida_central.md
+        - Média: material/estatistica_descritiva/medidas_de_tendencia_central/a_media.md
+        - Mediana: material/estatistica_descritiva/medidas_de_tendencia_central/a_mediana.md
+        - Moda: material/estatistica_descritiva/medidas_de_tendencia_central/a_moda.md
+        - Comparando medidas: material/estatistica_descritiva/medidas_de_tendencia_central/comparando_media_mediana_e_moda.md
       - Medidas de Variação:
-        - Amplitude: material/estatistica_descritiva/medidas_de_variacao/amplitude.md
-        - Variância e Desvio Padrão: material/estatistica_descritiva/medidas_de_variacao/variancia_e_desvio_padrao.md
-        - Interpretando o Desvio Padrão: material/estatistica_descritiva/medidas_de_variacao/interpretando_o_desvio_padrao.md
-        - Devio Padrão dos Dados Agrupados: material/estatistica_descritiva/medidas_de_variacao/desvio_padrao_dos_dados_agrupados.md
-        - Coeficiente de Variação: material/estatistica_descritiva/medidas_de_variacao/coeficiente_de_variacao.md
+        - Por que medir variação?: material/estatistica_descritiva/medidas_de_variacao/por_que_medir_a_variacao.md
+        - Amplitude e desvio médio: material/estatistica_descritiva/medidas_de_variacao/a_amplitude_e_o_desvio_medio.md
+        - Variância e desvio padrão: material/estatistica_descritiva/medidas_de_variacao/a_variancia_e_o_desvio_padrao.md
+        - Boxplot - visualizando a variação: material/estatistica_descritiva/medidas_de_variacao/o_boxplot.md
+        - Quando a variação importa: material/estatistica_descritiva/medidas_de_variacao/quando_a_variacao_importa.md
       - Medidas de Posição: 
-        - Quartis: material/estatistica_descritiva/medidas_de_posicao/quartis.md
-        - Percentis e Outras Separatrizes: material/estatistica_descritiva/medidas_de_posicao/percentis_e_outras_separatrizes.md
-        - O Escore Padrão:  material/estatistica_descritiva/medidas_de_posicao/o_escore_padrao.md
+        - Quanndo pensar em posicão? : material/estatistica_descritiva/medidas_de_posicao/quando_pensar_em_posicao.md
+        - Quartis, decis e percentis: material/estatistica_descritiva/medidas_de_posicao/quartis_decis_e_percentis.md
+        - Posição e Boxplot: material/estatistica_descritiva/medidas_de_posicao/posicao_e_boxplot.md
+        - Ogiva:  material/estatistica_descritiva/medidas_de_posicao/ogiva.md
+        - Escore Z:  material/estatistica_descritiva/medidas_de_posicao/escore_z.md
+        - Contextos Reais:  material/estatistica_descritiva/medidas_de_posicao/interpretando_posicoes_em_contextos_reais.md
     - Probabilidade:
       - material/probabilidade/index.md
     - Estatística Inferencial:
@@ -116,6 +125,7 @@ copyright: "© 2025 Igor Barbosa da Costa. Todos os direitos reservados."
 extra_javascript:
   #Apesar de colocar aqui, o arquivo precisa ser colocado no final de cada .md que fizer uso
   - https://cdn.jsdelivr.net/npm/chart.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
 extra_css:
   - assets/stylesheets/extra.css
