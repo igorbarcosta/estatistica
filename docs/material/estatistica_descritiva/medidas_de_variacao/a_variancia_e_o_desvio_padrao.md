@@ -42,12 +42,14 @@ Mas no segundo caso, há um atraso significativo em um dos acessos. Como captura
     - \( \bar{x} \): média dos dados
 
 !!! example "Exemplo"
-    Conjunto 2: [1, 2, 2, 2, 5]  
-    Média = 2  
-    Diferenças: [-1, 0, 0, 0, 3]  
-    Quadrados: [1, 0, 0, 0, 9] 
-     
-    Variância = \( \frac{1 + 0 + 0 + 0 + 9}{5} = 2 \)
+    - Conjunto 2: \( [1, 2, 2, 2, 5] \)
+    - Média: \( 2 \)
+    - Diferenças: \( [-1, 0, 0, 0, 3]  \)
+    - Quadrado das diferenças: \( [1, 0, 0, 0, 9] \)    
+
+    $$
+    \text{Variância} = \frac{1 + 0 + 0 + 0 + 9}{5} = 2
+    $$
 
 A variância do segundo conjunto é 2, enquanto no primeiro (com todos os valores iguais a 2), ela é **zero** — ou seja, **sem nenhuma variação**.
 

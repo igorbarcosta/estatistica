@@ -1,6 +1,22 @@
+<style>
+  #graficoModaCritica {
+    max-width: 100%;
+    height: 300px;
+  }
+</style>
+
 # A moda
 
-!!! success "Onde Estamos"
+!!! success "Objetivos de Aprendizagem"
+
+    Ao final desta seção, você será capaz de:
+
+    - Identificar a moda de um conjunto de dados.
+    - Reconhecer quando um conjunto é unimodal, bimodal ou amodal.
+    - Aplicar a moda a dados numéricos e categóricos.
+    - Avaliar quando a moda é uma medida central adequada (ou não).
+
+!!! abstract "Onde Estamos"
 
     Depois de conhecer a **média**, que busca um ponto de equilíbrio numérico, e a **mediana**, que aponta o valor central da ordenação, é hora de olhar para a terceira peça desse quebra-cabeça: a **moda**.
 
@@ -8,7 +24,8 @@
 
 ---
 
-## O dilema do suporte técnico: por onde começar?
+## Cenário
+### O dilema do suporte técnico: por onde começar?
 
 Imagine uma empresa de tecnologia que oferece suporte a clientes via chat. Ao final de cada atendimento, o cliente classifica sua experiência com uma nota de 1 a 5 estrelas.
 
@@ -25,10 +42,13 @@ Nesse mar de números, a média pode dizer algo, a mediana outro… Mas o que sa
 
 ---
 
-## O que é a moda?
+## Conceito de moda
 
 !!! info "Definição"
     A **moda** é o valor que **ocorre com maior frequência** em um conjunto de dados. Ela representa o **valor mais comum**, o que aparece mais vezes.
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
 !!! example "Exemplo"
         Dados: [5, 4, 5, 3, 5, 2, 5, 3, 4, 1, 5, 3, 4, 5, 2, 5, 5, 3, 4, 5]
@@ -43,64 +63,110 @@ Nesse mar de números, a média pode dizer algo, a mediana outro… Mas o que sa
 
     **Moda = 5** (nota mais comum)
 
-A moda, nesse contexto, nos diz de forma direta: a maioria das pessoas avaliou o suporte com **5 estrelas**. Isso pode ser um excelente sinal para a empresa.
+    Veja a distribuição das notas no gráfico abaixo:
+    
+    <canvas id="graficoModa"></canvas>
+
+
+Neste caso, a moda indica de forma clara: a maioria dos clientes deu **5 estrelas** para o atendimento.
 
 ---
 
-## Características da moda
+## Aplicações e Reflexões
 
-A moda tem um comportamento peculiar:
+### Como Interpretar a Moda
 
-- Pode **não existir**, se nenhum valor se repetir  
-- Pode haver **mais de uma moda**, se vários valores empatarem na frequência máxima  
-- Pode ser usada com **dados qualitativos ou categóricos**, o que a torna única entre as medidas centrais
+A moda tem um comportamento peculiar entre as medidas centrais:
+
+- Pode **não existir**, se todos os valores forem diferentes  
+- Pode haver **mais de uma moda**, se múltiplos valores tiverem a mesma frequência máxima (bimodal, multimodal)  
+- Pode ser usada tanto com **dados numéricos** quanto com **dados categóricos**
 
 !!! example "Exemplo com dados qualitativos"
-    Cores preferidas de usuários em um aplicativo:
+    Preferência de cores em um aplicativo:
 
         ["azul", "verde", "azul", "vermelho", "azul", "verde"]
 
-    Moda: **"azul"**
+    Contagem:
 
-    A média e a mediana não fazem sentido aqui, mas a moda revela qual cor predomina nas preferências.
+    - azul: 3 vezes  
+    - verde: 2 vezes  
+    - vermelho: 1 vez
 
----
+    **Moda = "azul"**
 
-## Quando (e por que) usar a moda
+    A média e a mediana não se aplicam nesse caso. 
 
-A moda é especialmente útil quando queremos:
+    <small>*A mediana pode ser definida em variáveis ordinais (como notas ‘ruim’, ‘regular’, ‘bom’, ‘ótimo’), mas não em variáveis nominais como cores.*</small>
 
-- **Detectar padrões ou preferências** em dados categóricos  
-- **Identificar tendências de comportamento**  
-- Observar **ocorrências dominantes** em distribuições numéricas
+### Quando a Moda Funciona Bem (e quando falha)
 
-Ela é uma medida descritiva direta, simples, e muito expressiva quando os dados têm um ou poucos valores que se destacam.
+A moda é especialmente útil para:
+
+- **Identificar padrões de comportamento ou consumo**
+- **Analisar dados categóricos**, como cores, marcas ou preferências
+- Detectar o **valor mais recorrente** em distribuições assimétricas
 
 !!! tip "Dica"
-    Em análises de comportamento de usuários, preferências de consumo, produtos mais vendidos, ou respostas de múltipla escolha, a moda costuma ser **a medida mais significativa**.
+    Em situações como escolha de produtos, resultados de enquetes ou avaliações em escala, a moda **pode ser a medida mais relevante** — pois mostra o que aparece com mais força no coletivo.
+
+Por outro lado, a moda pode ser limitada quando:
+
+- Os dados têm **alta dispersão**
+- Ela representa uma **minoria com forte presença**, mas não a maioria
+- Há **empates** entre valores pouco representativos
+
+!!! example "A moda pode enganar"
+    Imagine as notas de uma turma em uma avaliação:
+
+        [1, 1, 7, 7, 7, 8, 9, 9, 10, 10, 10, 10]
+
+    Contagem:
+
+    - Moda = **10** (ocorre 4 vezes)
+
+    Agora calcule:
+
+    - Média ≈ 7.25  
+    - Mediana = 8
+
+    <canvas id="graficoModaCritica"></canvas>
+
+    O que é mais representativo do grupo? A moda (10) está puxada por **uma minoria com alto desempenho**, mas a maior parte dos alunos está entre 7 e 9.
+
+    Neste caso, a **moda enfatiza um grupo menor**, e **pode ocultar** o desempenho típico da maioria. A média e a mediana, aqui, são mais informativas.
+
+
+
+
+### Para Refletir
+
+??? question "Se a moda for um valor extremo, ela ainda representa bem o grupo?"
+    Imagine um produto com avaliações majoritárias entre 3 e 4 estrelas, mas várias pessoas deram 1 estrela por insatisfação específica. Se 1 for o valor mais frequente, a moda será 1 — mas será que isso representa bem a percepção geral?
 
 ---
 
-## A moda pode enganar?
+## Resumo
 
-Assim como outras medidas centrais, a moda também tem seus limites.
+!!! abstract "Pontos-Chave"
 
-!!! warning "Atenção"
-    A moda **ignora todos os outros valores** que não sejam os mais frequentes.  
-    Isso pode ser problemático quando:
+    - A moda é o valor mais frequente em um conjunto de dados.
+    - Pode ser usada com dados numéricos e categóricos.
+    - Pode não existir ou ter múltiplas modas.
+    - Ignora a distribuição dos demais valores — o que pode ser uma limitação.
+    - É muito útil para análises de preferências, padrões de consumo e dados qualitativos.
 
-    - Há muita variação nos dados
-    - A frequência da moda é baixa ou pouco relevante
-    - Há múltiplas modas com sentidos opostos (ex.: opiniões polarizadas)
+!!! success "Checklist de Revisão"
 
-??? question "Reflexão: Se a moda for um valor extremo, ela ainda representa bem o grupo?"
-    Depende. Imagine um produto com avaliações majoritariamente entre 3 e 4 estrelas, mas com várias pessoas dando 1 estrela por insatisfação específica. Se o valor 1 for o mais frequente, a moda será 1 — mas isso pode distorcer a percepção geral se a maioria não tiver avaliado tão mal assim.
+    - Sei identificar a moda em dados numéricos e categóricos.
+    - Entendo quando há uma única moda, múltiplas ou nenhuma.
+    - Reconheço os limites da moda em representar a totalidade dos dados.
 
 ---
 
-## Fechando o ciclo: a medida do comum
+## Conclusão
 
-Enquanto a média resume, e a mediana divide, a moda **revela o valor mais recorrente**. Ela pode ser o melhor termômetro de popularidade, preferência ou padrão dominante — mesmo quando os números não são simétricos ou equilibrados.
+Enquanto a média resume e a mediana divide, a moda **captura o que é mais recorrente**. Ela pode parecer simples, mas sua força está justamente nisso: **mostrar aquilo que o grupo mais expressa — seja uma nota, uma opinião, uma cor ou uma escolha.**
 
 > A moda é a voz da repetição. E muitas vezes, o que mais se repete é o que mais importa entender.
 
@@ -109,3 +175,168 @@ Enquanto a média resume, e a mediana divide, a moda **revela o valor mais recor
 ## Materiais Complementares
 
 - [Khan Academy: Como resumir dados quantitativos](https://pt.khanacademy.org/math/statistics-probability/summarizing-quantitative-data)
+
+---
+
+<script src="
+https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/3.1.0/chartjs-plugin-annotation.min.js
+"></script>
+
+<script>
+    ctx = document.getElementById('graficoModa').getContext('2d');
+    new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['1', '2', '3', '4', '5'],
+        datasets: [{
+        label: 'Frequência',
+        data: [1, 2, 3, 3, 9],
+        borderWidth: 1
+        }]
+    },
+    options: {
+        indexAxis: 'x',
+        scales: {
+        y: {
+            beginAtZero: true,
+            precision: 0,
+            ticks: {
+            stepSize: 1
+            }
+        }
+        },
+        plugins: {
+        legend: { display: false },
+        tooltip: {
+            callbacks: {
+            label: (context) => ` ${context.parsed.y} ocorrência(s)`
+            }
+        }
+        }
+    }
+    });
+</script>
+
+
+<script>
+  Chart.register(window['chartjs-plugin-annotation']);
+
+  const ctx = document.getElementById('graficoModaCritica').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      datasets: [{
+        label: 'Frequência',
+        data: [
+          { x: 1, y: 2 },
+          { x: 7, y: 3 },
+          { x: 8, y: 1 },
+          { x: 9, y: 2 },
+          { x: 10, y: 4 }
+        ],
+        backgroundColor: function(context) {
+          return context.raw.x === 10 ? '#fbc531' : '#dcdcdc';
+        },
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      layout: {
+        padding: 10
+      },
+      scales: {
+        x: {
+          type: 'linear',
+          min: 0,
+          max: 11,
+          ticks: {
+            stepSize: 1,
+            font: {
+              size: 14
+            }
+          },
+          title: {
+            display: true,
+            text: 'Notas',
+            font: {
+              size: 16,
+              weight: 'bold'
+            }
+          }
+        },
+        y: {
+          beginAtZero: true,
+          ticks: {
+            precision: 0,
+            stepSize: 1,
+            font: {
+              size: 14
+            }
+          },
+          title: {
+            display: true,
+            text: 'Frequência',
+            font: {
+              size: 16,
+              weight: 'bold'
+            }
+          }
+        }
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => `${ctx.raw.y} ocorrência(s)`
+          }
+        },
+        annotation: {
+          annotations: {
+            media: {
+              type: 'line',
+              borderColor: '#00a8ff',
+              borderWidth: 2,
+              scaleID: 'x',
+              value: 7.25,
+              label: {
+                content: 'Média ≈ 7.25',
+                display: true,
+                position: 'start',
+                color: '#000',
+                font: {
+                  weight: 'bold',
+                  size: 12
+                }
+              }
+            },
+            mediana: {
+              type: 'line',
+              borderColor: '#e84118',
+              borderWidth: 2,
+              scaleID: 'x',
+              value: 8,
+              label: {
+                content: 'Mediana = 8',
+                display: true,
+                position: 'end',
+                color: '#000',
+                font: {
+                  weight: 'bold',
+                  size: 12
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  });
+</script>
+
+
+
+
+
+

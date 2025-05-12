@@ -1,104 +1,122 @@
 # A mediana
 
-!!! success "Onde Estamos"
+!!! success  "Objetivos de Aprendizagem"
 
-    Você já viu que a média é uma forma simples e comum de resumir um conjunto de dados, mas também que ela pode ser **enganosa quando há valores muito extremos**. Agora, vamos conhecer uma alternativa poderosa e muitas vezes mais justa: a **mediana**.  
+    Ao final desta seção, você será capaz de:
 
-    Ela não tenta “equilibrar” os dados, mas sim **descobrir o valor central real** — aquele que divide o grupo ao meio.
+    - Calcular a mediana de um conjunto de dados ordenados.
+    - Interpretar a mediana como uma medida de posição central.
+    - Entender por que a mediana é resistente a valores extremos.
+    - Reconhecer situações em que a mediana é mais apropriada que a média.
+
+!!! abstract "Onde Estamos"
+
+    Você já viu que a média é uma forma comum de representar o comportamento típico de um grupo de dados. Porém, em muitos casos, ela pode ser **fortemente influenciada por valores extremos**. Agora, vamos conhecer uma alternativa que busca **equilibrar o grupo de outra forma** — apontando o valor **central real** dos dados. Essa medida é a **mediana**.
 
 ---
 
-## O caso da análise de salários: quem está no meio?
+## Cenário
+### Quando a média engana, a mediana revela
 
-Uma empresa de tecnologia quer entender a situação salarial dos seus colaboradores para ajustar sua política interna. Veja os salários (em milhares de reais) de 9 profissionais da equipe técnica:
+Imagine uma empresa de tecnologia analisando os salários da equipe técnica para ajustar sua política de remuneração. Veja os salários (em milhares de reais) de 9 colaboradores:
 
-```
-[3, 3, 4, 5, 6, 6, 7, 8, 60]
-```
+- [3, 3, 4, 5, 6, 6, 7, 8, 60]
 
 A média salarial é:
 
 \[
-\frac{3 + 3 + 4 + 5 + 6 + 6 + 7 + 8 + 60}{9} = \frac{102}{9} \approx 11,3 \text{ mil}
+\bar{x} = \frac{3 + 3 + 4 + 5 + 6 + 6 + 7 + 8 + 60}{9} = \frac{102}{9} \approx 11,3 \text{ mil}
 \]
 
-Mas olhe novamente os dados: **oito pessoas ganham até 8 mil**. A média de 11,3 mil representa bem esse grupo?
+Mas, olhando os dados, percebemos que **oito pessoas ganham até 8 mil**. Apenas uma tem um salário de 60 mil. A média representa bem essa realidade?
 
 ---
 
-## A mediana entra em cena
-
-Nesse tipo de situação, em que **um valor extremo distorce a média**, a mediana pode oferecer uma representação mais fiel do “centro real” dos dados.
+## Conceito
 
 !!! info "Definição"
-    A **mediana** é o valor que ocupa a posição central em um conjunto de dados ordenados. Ela divide os dados em duas metades: metade dos valores está **abaixo ou igual** a ela, e metade está **acima ou igual**.
-
-!!! example "Exemplo"
-    Dados ordenados: [3, 3, 4, 5, 6, 6, 7, 8, 60]  
-    Como temos 9 valores (número ímpar), a mediana é o **quinto valor** da lista:  
-    **Mediana = 6 mil**
-
-    Agora compare:
-
-    - Média ≈ 11,3 mil  
-    - Mediana = 6 mil
-
-    A média foi puxada para cima por um único valor muito alto. A mediana ignora essa distorção.
-
----
-
-## Como calcular a mediana
+    A **mediana** é o valor central de um conjunto de dados **ordenado**. Ela divide os dados em duas partes iguais: **metade dos valores está abaixo (ou igual) a ela, e metade está acima (ou igual)**.
 
 !!! note "Regra de cálculo"
-    Para um conjunto com \( n \) valores **ordenados**:
+    - Se o número de dados \( n \) for **ímpar**: a mediana é o valor da posição \( \frac{n+1}{2} \).
+    - Se \( n \) for **par**: a mediana é a **média dos dois valores centrais**, nas posições \( \frac{n}{2} \) e \( \frac{n}{2} + 1 \).
 
-    - Se \( n \) for ímpar: a mediana é o valor da posição \( \frac{n+1}{2} \)
-    - Se \( n \) for par: é a média dos dois valores centrais, nas posições \( \frac{n}{2} \) e \( \frac{n}{2}+1 \)
+!!! example "Exemplo com número ímpar"
+    Dados: [3, 3, 4, 5, 6, 6, 7, 8, 60]  
+    Total de valores: \( n = 9 \) (ímpar)  
+    A mediana está na posição \( \frac{9 + 1}{2} = 5 \)  
+    **Mediana = 6 mil**
 
-!!! example "Exemplo com número par de elementos"
+!!! example "Exemplo com número par"
     Dados: [4, 5, 7, 9]  
-    Como há 4 valores, a mediana será:
-
+    Total de valores: \( n = 4 \) (par)  
+    A mediana será:  
     \( \frac{5 + 7}{2} = 6 \)
 
 ---
 
-## Por que a mediana é resistente?
+## Aplicações e Reflexões
 
-A força da mediana está no fato de que **ela depende apenas da ordem dos dados, não dos seus valores exatos**.
+### Como Interpretar a Mediana
 
-!!! tip "Dica"
-    A mediana é considerada uma medida **robusta**, porque não se deixa influenciar por valores muito altos ou baixos. Ela é ideal quando o objetivo é capturar o comportamento central **sem ser afetado por extremos**.
+A mediana mostra o **centro posicional dos dados**, não o ponto de equilíbrio. No exemplo dos salários, ela indica que **a metade da equipe ganha até 6 mil**, enquanto a outra metade ganha mais que isso. O valor de 60 mil **não afeta** esse ponto central.
+
+### Quando a Mediana Funciona Bem (e quando falha)
+
+!!! warning "Atenção"
+    A mediana **não é afetada por outliers**. Isso a torna uma medida **robusta** — ideal para situações onde poucos valores destoantes podem distorcer a percepção geral.
+
+    No exemplo dos salários, a mediana continuaria praticamente igual mesmo que o maior salário fosse 100 mil.
+
+A mediana é mais apropriada quando:
+
+- Há **valores extremos** no conjunto de dados
+- A distribuição é **assimétrica**
+- Você quer representar uma **experiência comum**, como no caso de **salários, preços ou tempos de espera**
+
+Ela pode não ser ideal quando:
+
+- Você precisa considerar o **valor total agregado**
+- Está lidando com dados **simétricos e sem outliers**, onde média e mediana coincidem
+
+
+### Para Refletir
+
+??? question "Você decidiria uma política salarial com base na média ou na mediana?"
+    A mediana mostra o valor que a maioria das pessoas recebe. Já a média pode ser inflada por poucos salários altíssimos. Para políticas que querem refletir a realidade da maior parte dos colaboradores, **a mediana costuma ser mais justa**.
 
 ---
 
-## Quando preferir a mediana
+## Resumo
 
-A mediana é especialmente útil quando:
+!!! abstract "Pontos-Chave"
 
-- Os dados têm **valores extremos (outliers)**  
-- A distribuição dos dados é **assimétrica**  
-- Você quer representar a **experiência de uma pessoa comum**, como no caso de **salários, tempos de espera ou preços**
+    - É o valor central de um conjunto de dados ordenados.
+    - Divide o grupo em duas partes: metade dos valores está abaixo, metade acima.
+    - Não é influenciada por valores extremos (outliers).
+    - Representa bem o "valor típico" em distribuições assimétricas.
+    - Pode coincidir com a média em dados simétricos.
+    - É ideal quando o objetivo é descrever a **experiência comum**.
 
-??? question "Reflexão: Em uma empresa com poucos salários altíssimos e muitos salários baixos, qual medida representa melhor a realidade da maioria?"
-    A mediana. A média seria elevada pelos salários altíssimos, dando a impressão de que “todos ganham bem”, quando na verdade a maioria pode estar ganhando muito menos que esse valor.
+!!! success  "Checklist de Revisão"
+
+    - Sei calcular a mediana para dados ímpares e pares.
+    - Compreendo por que a mediana é resistente a outliers.
+    - Identifico situações em que a mediana representa melhor o grupo do que a média.
 
 ---
 
-## E se todos os valores forem iguais?
+## Conclusão
 
-Nesse caso, não há mistério: a média e a mediana coincidem. Isso mostra que **quando os dados são simétricos e uniformes, ambas as medidas contam a mesma história**. Mas basta um único valor destoante para que **a média mude e a mediana permaneça**.
+A mediana é como um espelho da maioria silenciosa. Ela não se deixa influenciar por quem está muito acima ou muito abaixo. Em análises sociais, econômicas ou operacionais, onde **valores extremos são comuns**, confiar na mediana é muitas vezes a decisão mais honesta.
 
----
-
-## Encerrando: a mediana como espelho da maioria
-
-A mediana não tenta fazer média com ninguém. Ela simplesmente aponta: *“Aqui está o valor que separa a metade superior da metade inferior.”* Simples, direto e, muitas vezes, mais justo.
-
-> A mediana não se deixa influenciar por extremos. Em muitos casos, é ela quem melhor revela o que é comum, não o que é espetacular.
+> Quando você quer saber “o que é comum”, pergunte à mediana. Ela não representa o espetáculo, mas o cotidiano.
 
 ---
 
 ## Materiais Complementares
 
 - [Khan Academy: Como resumir dados quantitativos](https://pt.khanacademy.org/math/statistics-probability/summarizing-quantitative-data)
+
+---
+

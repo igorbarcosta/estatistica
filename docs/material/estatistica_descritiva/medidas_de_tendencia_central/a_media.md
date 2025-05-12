@@ -1,12 +1,22 @@
 # A média
 
-!!! success "Onde Estamos"
+!!! objetivos "Objetivos de Aprendizagem"
 
-    Você já viu por que é importante buscar uma medida central — um valor que represente, de forma resumida, o comportamento típico de um grupo de dados. Agora, vamos começar a explorar essas medidas com mais profundidade. A primeira delas, e talvez a mais conhecida, é a **média aritmética**.
+    Ao final desta seção, você será capaz de:
+
+    - Calcular a média aritmética de um conjunto de dados.
+    - Interpretar o significado da média no contexto de um problema real.
+    - Identificar como valores extremos (outliers) afetam a média.
+    - Reconhecer situações onde a média é uma medida útil e onde pode ser limitada.
+
+!!! onde-estamos "Onde Estamos"
+
+    Você já viu por que é importante buscar uma medida central — um valor que represente, de forma resumida, o comportamento típico de um grupo de dados. Agora, vamos explorar essas medidas com mais profundidade, começando pela mais conhecida delas: a **média aritmética**.
 
 ---
 
-## Quando a média parece ser a resposta perfeita
+## Cenário
+### Quando a média parece ser a resposta perfeita
 
 Considere uma equipe de engenharia de software em uma empresa de tecnologia. A liderança quer entender como está a produtividade da equipe e, para isso, decide acompanhar **quantas tarefas cada pessoa concluiu na última sprint**.
 
@@ -22,7 +32,7 @@ Nesse caso, a liderança está buscando **um número que represente a produtivid
 
 ---
 
-## O cálculo da média
+## Formalização
 
 !!! info "Definição"
     A **média aritmética** é o valor obtido somando todos os dados e dividindo o total pelo número de observações. Representa o ponto de equilíbrio dos valores numéricos em um conjunto.
@@ -41,73 +51,80 @@ Nesse caso, a liderança está buscando **um número que represente a produtivid
     - \( n \): número total de valores
 
 !!! example "Exemplo"
-    Dados: [10, 9, 11, 8, 10, 9, 12, 8, 2, 26]  
-    Soma: 105  
-    Número de desenvolvedores: 10  
+    Usando os dados da equipe de engenharia: [10, 9, 11, 8, 10, 9, 12, 8, 2, 26]
 
-    Média: \( \frac{105}{10} = 10,5 \) tarefas
-
-A média sugere que a equipe, em geral, entrega 10,5 tarefas por sprint. Mas… será que isso representa bem todos os membros?
+    1. **Soma dos valores:** \(10 + 9 + 11 + 8 + 10 + 9 + 12 + 8 + 2 + 26 = 105\)
+    2. **Número de observações (desenvolvedores):** \(n = 10\)
+    3. **Cálculo da Média:**
+        $$
+        \bar{x} = \frac{105}{10} = 10,5
+        $$
+    A média de tarefas concluídas por desenvolvedor nesta sprint é de 10,5 tarefas.
 
 ---
 
-## A sensibilidade da média a valores extremos
+## Aplicações e Reflexões
 
-Observe os dados do exemplo anterior. A maior parte da equipe está entre 8 e 12 tarefas. No entanto:
+### Como Interpretar a Média
 
-- O valor **2** (de quem esteve doente) puxa a média para baixo  
-- O valor **26** (do plantonista) puxa a média para cima
+A média de 10,5 tarefas sugere que, "em equilíbrio", cada membro da equipe produziu essa quantidade. Porém, será que esse número representa bem a experiência típica de um desenvolvedor?
 
-Esses dois casos específicos são chamados de **valores extremos** ou **outliers**. E eles têm um efeito direto sobre a média.
+A maioria dos desenvolvedores concluiu entre 8 e 12 tarefas, mas temos:
+
+- O valor **2** (por doença) puxando a média para baixo  
+- O valor **26** (plantonista) puxando a média para cima
+
+Esses casos são chamados **valores extremos (outliers)** e têm grande impacto sobre a média.
+
+###  Quando a Média Funciona Bem (e quando falha)
 
 !!! warning "Atenção"
-    A média aritmética **é altamente sensível a valores extremos**. Mesmo que apenas uma ou duas observações sejam muito diferentes do restante, elas podem distorcer a média de forma significativa.
+    A média aritmética é **muito sensível a valores extremos**. Poucas observações diferentes do restante podem distorcer significativamente a média, levando a interpretações incorretas sobre o grupo.
 
-Essa distorção pode levar a interpretações erradas sobre o comportamento geral do grupo.
+A média é especialmente útil quando os dados:
 
----
+- São relativamente **simétricos**
+- Não apresentam muitos **valores extremos**
+- Precisam refletir um "ponto de equilíbrio" como orçamentos ou desempenho médio
 
-## Quando a média é útil (e quando não é)
+Contudo, pode não ser ideal quando:
 
-A média funciona bem quando os dados:
+- Dados têm fortes **distorções ou assimetrias**
+- A intenção é capturar a **experiência individual típica**
 
-- Estão relativamente **simétricos** (sem muitos extremos)  
-- Não têm **valores muito destoantes**  
-- São usados em situações que exigem um "ponto de equilíbrio" (como orçamentos, balanços, médias de desempenho consistentes)
+### Para Refletir
 
-Mas ela pode ser problemática quando:
-
-- Há **distorções por casos atípicos**, como vimos  
-- Os dados têm **distribuições assimétricas**  
-- O público da análise **espera entender uma experiência individual comum**, e não um valor numérico puro
-
-??? question "Reflexão: Você contrataria alguém baseado apenas na média da produtividade da equipe?"
-    Talvez não. A média pode indicar que o time está indo bem, mas esconde a variabilidade. Uma pessoa pode estar produzindo o dobro de outra. A média não mostra essa diferença. Para decisões mais justas ou precisas, **outras medidas** precisam entrar na conversa.
+??? question "Você contrataria alguém baseado apenas na média da produtividade da equipe?"
+    Talvez não. A média pode indicar boa produtividade geral, mas esconde diferenças significativas entre membros da equipe. Para decisões mais justas ou precisas, outras medidas precisam ser consideradas.
 
 ---
 
-## Por que ainda usamos tanto a média?
+## Resumo
 
-Apesar das limitações, a média continua sendo amplamente usada — e com razão:
+!!! abstract "Pontos-Chave"
 
-- É **simples de calcular e interpretar**
-- Permite fazer **comparações rápidas**
-- Serve como base para **muitos modelos estatísticos**
+    - Média é calculada somando os valores e dividindo pelo total de observações.
+    - Representa o "ponto de equilíbrio" dos dados.
+    - É sensível a valores extremos (outliers).
+    - Adequada para dados simétricos e sem muitos valores extremos.
 
-O importante é saber quando ela **realmente representa o grupo** — e quando pode estar contando uma história incompleta.
+!!! success "Checklist de Revisão"
 
----
+    - Consigo calcular facilmente a média de um conjunto simples de dados.
+    - Entendo claramente como valores extremos afetam a média.
+    - Sei reconhecer quando a média é adequada ou limitada para analisar os dados.
 
-## Fechando a conta: a média como ponto de partida, não como resposta final
+--- 
 
-A média pode ser um ótimo começo para entender um conjunto de dados, desde que saibamos **ler seus limites**. Ela resume, mas não explica tudo. E, especialmente em contextos onde **as experiências individuais variam muito**, confiar apenas na média pode levar a decisões injustas ou ineficazes.
+## Conclusão
 
-> Toda média tem um contexto. E fora dele, pode ser apenas um número bonito que esconde uma realidade complexa.
+A média é um bom começo para entender um grupo de dados, desde que saibamos interpretar seus limites. Fora do contexto, pode esconder complexidades importantes da realidade observada.
+
+> Toda média precisa de contexto. Sem ele, pode ser apenas um número bonito que encobre uma realidade mais complexa.
 
 ---
 
 ## Materiais Complementares
 
 - [Khan Academy: Como resumir dados quantitativos](https://pt.khanacademy.org/math/statistics-probability/summarizing-quantitative-data)
-
 

@@ -87,11 +87,11 @@ nav:
         - Representações Gráficas: material/estatistica_descritiva/distribuicoes_de_frequencia/representacoes_graficas.md
         - Erros comuns e Armadilhas: material/estatistica_descritiva/distribuicoes_de_frequencia/erros_comuns_e_armadilhas.md
       - Medidas de Tendência Central:
-        - Por quê?: material/estatistica_descritiva/medidas_de_tendencia_central/por_que_precisamos_de_uma_medida_central.md
-        - Média: material/estatistica_descritiva/medidas_de_tendencia_central/a_media.md
-        - Mediana: material/estatistica_descritiva/medidas_de_tendencia_central/a_mediana.md
-        - Moda: material/estatistica_descritiva/medidas_de_tendencia_central/a_moda.md
-        - Comparando medidas: material/estatistica_descritiva/medidas_de_tendencia_central/comparando_media_mediana_e_moda.md
+        - Por que precisamos de uma medida central?: material/estatistica_descritiva/medidas_de_tendencia_central/por_que_precisamos_de_uma_medida_central.md
+        - A média: material/estatistica_descritiva/medidas_de_tendencia_central/a_media.md
+        - A mediana: material/estatistica_descritiva/medidas_de_tendencia_central/a_mediana.md
+        - A moda: material/estatistica_descritiva/medidas_de_tendencia_central/a_moda.md
+        - Comparando média, mediana e moda: material/estatistica_descritiva/medidas_de_tendencia_central/comparando_media_mediana_e_moda.md
       - Medidas de Variação:
         - Por que medir variação?: material/estatistica_descritiva/medidas_de_variacao/por_que_medir_a_variacao.md
         - Amplitude e desvio médio: material/estatistica_descritiva/medidas_de_variacao/a_amplitude_e_o_desvio_medio.md
@@ -106,7 +106,16 @@ nav:
         - Escore Z:  material/estatistica_descritiva/medidas_de_posicao/escore_z.md
         - Contextos Reais:  material/estatistica_descritiva/medidas_de_posicao/interpretando_posicoes_em_contextos_reais.md
     - Probabilidade:
-      - material/probabilidade/index.md
+      - Fundamentos da Probabilidade:
+        - Por que precisamos da ideia de probabilidade? : material/probabilidade/fundamentos_da_probabilidade/por_que_precisamos_da_ideia_de_probabilidade.md
+        - Os quatro pilares fundamentais: material/probabilidade/fundamentos_da_probabilidade/os_quatro_pilares_fundamentais.md
+        - A Probabilidade clássica : material/probabilidade/fundamentos_da_probabilidade/a_probabilidade_classica.md
+        - A Probabilidade empírica : material/probabilidade/fundamentos_da_probabilidade/a_probabilidade_empirica.md
+        - A Probabilidade subjetiva : material/probabilidade/fundamentos_da_probabilidade/a_probabilidade_subjetiva.md
+      - Relações entre eventos:  
+        - O Evento Complementar:  material/probabilidade/relacoes_entre_eventos/evento_complementar.md
+        - A regra da adição: material/probabilidade/relacoes_entre_eventos/a_regra_da_adicao.md
+        - A regra da multiplicação: material/probabilidade/relacoes_entre_eventos/a_regra_da_multiplicacao.md
     - Estatística Inferencial:
       - material/estatistica_inferencial/index.md
 
