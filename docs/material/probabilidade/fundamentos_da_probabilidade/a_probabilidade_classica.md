@@ -1,4 +1,3 @@
-Perfeito! A seguir, a lição completa sobre **como calcular a probabilidade de um evento**, conectando diretamente com os conceitos já aprendidos — com linguagem acessível, foco na compreensão e ênfase em aplicações e armadilhas.
 # A Probabilidade Clássica
 
 !!! objetivos "Objetivos de Aprendizagem"
