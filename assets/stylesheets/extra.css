@@ -1,0 +1,109 @@
+.md-typeset h1 {
+  line-height: 1.3;
+  letter-spacing: -.02em ;
+  font-weight: 200;
+  font-size: 2.5em;
+}
+
+.md-typeset h2 {
+  font-size: 1.8em;
+  line-height: 1.3;
+  letter-spacing: -.02em ;
+  font-weight: 600;
+  margin-top: 2em !important;
+}
+
+.md-typeset h3::before {
+  content: "🗹";
+  margin-right: 0.3em;
+
+}
+
+.md-typeset h3 {
+  font-weight: 600 !important;
+  margin-top: 2em !important;
+}
+
+hr {
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
+}
+
+
+/* Estilo para labels (usado em seções com toggle) */
+.md-nav__item--section > label.md-nav__link {
+  font-weight: bold;
+}
+
+
+.admonition, .question {
+    font-size: 0.9em !important;
+}
+
+
+.hero-image {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+}
+  
+.chartjs-container {
+  width: 100%;
+  margin: 20px 0;
+}
+
+@media only screen and (min-width: 76.25em) {
+  .chartjs-container {
+    width: 80%;
+    margin: 20px auto;
+  }
+}
+
+
+
+:root {
+  --md-admonition-icon--onde-estamos: url('../images/geo-alt-fill.svg')
+}
+
+
+.md-typeset .admonition.onde-estamos,
+.md-typeset details.onde-estamos {
+  border-color: rgb(255, 23, 68);
+}
+.md-typeset .onde-estamos > .admonition-title,
+.md-typeset .onde-estamos > summary {
+  background-color: rgba(255, 23, 68, 0.1);
+}
+.md-typeset .onde-estamos > .admonition-title::before,
+.md-typeset .onde-estamos > summary::before {
+  background-color: rgb(255, 23, 68);
+  -webkit-mask-image: var(--md-admonition-icon--onde-estamos);
+          mask-image: var(--md-admonition-icon--onde-estamos);
+}
+
+
+:root {
+  --md-admonition-icon--objetivos: url('../images/bullseye.svg')
+}
+
+.md-typeset .admonition.objetivos,
+.md-typeset details.objetivos {
+  border-color: rgb(68, 138, 255);
+}
+.md-typeset .objetivos > .admonition-title,
+.md-typeset .objetivos > summary {
+  background-color: rgba(68, 138, 255, 0.1);
+}
+.md-typeset .objetivos > .admonition-title::before,
+.md-typeset .objetivos > summary::before {
+  background-color: rgb(68, 138, 255);
+  -webkit-mask-image: var(--md-admonition-icon--objetivos);
+          mask-image: var(--md-admonition-icon--objetivos);
+  
+}
